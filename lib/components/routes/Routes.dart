@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/hive_setting_screen.dart';
 
 import '../../screens/login_screen.dart';
 import '../../screens/products_screen.dart';
@@ -7,6 +8,7 @@ import '../../screens/register_screen.dart';
 const LOGIN_SCREEN = "/login";
 const REGISTER = '/register';
 const PRODUCTS = '/products';
+const HIVE_SETTING = '/setting';
 
 RouteFactory hiveRouteFactory() {
   return (settings) {
@@ -21,6 +23,9 @@ RouteFactory hiveRouteFactory() {
         break;
       case PRODUCTS:
         screen = Products();
+        break;
+      case HIVE_SETTING:
+        screen = HiveSetting();
         break;
       default:
         screen = Login();

@@ -9,8 +9,6 @@ class Register extends StatefulWidget {
 }
 
 class _Register extends State<Register> {
-  var _isObscure = true;
-  var _isRetypeObscure = true;
 
   @override
   Widget build(BuildContext context) {

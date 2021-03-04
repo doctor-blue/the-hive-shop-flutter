@@ -25,12 +25,15 @@ class _HiveTextFieldState extends State<HiveTextField> {
           suffixIcon: widget._hasIcon
               ? IconButton(
                   icon: Icon(
-                      _isObscure ? Icons.visibility : Icons.visibility_off),
+                    _isObscure ? Icons.visibility : Icons.visibility_off,
+                  ),
                   color: Color(0xFF555962),
                   onPressed: () {
-                    setState(() {
-                      _isObscure = !_isObscure;
-                    });
+                    setState(
+                      () {
+                        _isObscure = !_isObscure;
+                      },
+                    );
                   },
                 )
               : null,

@@ -11,6 +11,6 @@ ThemeData baseThemeData() {
     appBarTheme: AppBarTheme(
       textTheme: TextTheme(headline6: AppBarTextStyle),
     ),
-    textTheme: TextTheme(headline1: headLine1, bodyText1: Body1TextStyle),
+    textTheme: TextTheme(headline1: headLine1, bodyText1: body1TextStyle),
   );
 }

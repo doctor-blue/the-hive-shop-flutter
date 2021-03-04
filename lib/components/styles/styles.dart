@@ -17,7 +17,7 @@ const headLine1 = TextStyle(
   fontWeight: FontWeight.bold
 );
 
-const Body1TextStyle = TextStyle(
+const body1TextStyle = TextStyle(
   fontSize: BodyTextSize,
   color: Colors.black,
 );

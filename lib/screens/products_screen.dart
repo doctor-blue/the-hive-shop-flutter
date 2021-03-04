@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/components/routes/Routes.dart';
 import 'package:flutter_app/components/styles/colors.dart';
 
 class Products extends StatelessWidget {
@@ -8,7 +9,9 @@ class Products extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: Icon(Icons.account_circle,color: textColorPrimary,),
-          onPressed: () {},
+          onPressed: () {
+            _setting(context);
+          },
         ),
         title: Text(
           'The Hive Shop',
@@ -25,5 +28,9 @@ class Products extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  _setting(BuildContext context) {
+    Navigator.pushNamed(context, HIVE_SETTING);
   }
 }
