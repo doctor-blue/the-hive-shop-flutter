@@ -15,7 +15,9 @@ class Products extends StatelessWidget {
             Icons.account_circle,
             color: textColorPrimary,
           ),
-          onPressed: () {},
+          onPressed: () {
+            _setting(context);
+          },
         ),
         title: Text(
           'The Hive Shop',
@@ -33,7 +35,9 @@ class Products extends StatelessWidget {
               Icons.shopping_cart_outlined,
               color: textColorPrimary,
             ),
-            onPressed: () {},
+            onPressed: () {
+              _cart(context);
+            },
           ),
         ],
       ),
@@ -74,5 +78,9 @@ class Products extends StatelessWidget {
 
   _setting(BuildContext context) {
     Navigator.pushNamed(context, HIVE_SETTING);
+  }
+
+  _cart(BuildContext context) {
+    Navigator.pushNamed(context, CART);
   }
 }

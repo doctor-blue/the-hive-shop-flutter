@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/screens/cart_screen.dart';
 import 'package:flutter_app/screens/hive_setting_screen.dart';
 import 'package:flutter_app/screens/product_detail_screen.dart';
 
@@ -11,6 +12,7 @@ const REGISTER = '/register';
 const PRODUCTS = '/products';
 const HIVE_SETTING = '/setting';
 const PRODUCT_DETAIL = "/product-detail";
+const CART = '/cart';
 
 RouteFactory hiveRouteFactory() {
   return (settings) {
@@ -31,6 +33,9 @@ RouteFactory hiveRouteFactory() {
         break;
       case PRODUCT_DETAIL:
         screen = ProductDetail(arguments[ProductDetail.productDetailKey]);
+        break;
+      case CART:
+        screen = Cart();
         break;
       default:
         screen = Login();
