@@ -20,6 +20,8 @@ class ProductItem extends StatelessWidget {
               children: [
                 Image.network(
                   product.url,
+                  width: 200,
+                  height: 130,
                   fit: BoxFit.fitWidth,
                 ),
                 SizedBox(
