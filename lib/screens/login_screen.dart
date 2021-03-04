@@ -18,23 +18,39 @@ class _Login extends State<Login> {
         child: Center(
           child: Column(
             children: [
-              SizedBox(height: 64),
+              SizedBox(
+                height: 64,
+              ),
               Image.asset(
                 'assets/images/bee.png',
                 width: 64,
                 height: 64,
               ),
-              SizedBox(height: 32),
+              SizedBox(
+                height: 32,
+              ),
               Text(
                 'WELCOME\nBACK',
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headline1,
               ),
-              SizedBox(height: 64),
-              HiveTextField("Email", false),
-              SizedBox(height: 16),
-              HiveTextField("Password", true),
-              SizedBox(height: 40),
+              SizedBox(
+                height: 64,
+              ),
+              HiveTextField(
+                "Email",
+                false,
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              HiveTextField(
+                "Password",
+                true,
+              ),
+              SizedBox(
+                height: 40,
+              ),
               HiveButton(
                 "SIGN IN",
                 width: 172.0,
@@ -44,7 +60,9 @@ class _Login extends State<Login> {
                   _signIn(context);
                 },
               ),
-              SizedBox(height: 24),
+              SizedBox(
+                height: 24,
+              ),
               HiveButton(
                 "SIGN UP",
                 width: 172.0,

@@ -19,5 +19,5 @@ const headLine1 = TextStyle(
 
 const body1TextStyle = TextStyle(
   fontSize: BodyTextSize,
-  color: Colors.black,
+  color: textColorPrimary,
 );
