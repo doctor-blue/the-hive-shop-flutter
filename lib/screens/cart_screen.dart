@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/styles/colors.dart';
+import 'package:flutter_app/components/widgets/cart_item.dart';
 import 'package:flutter_app/components/widgets/hive_button.dart';
+import 'package:flutter_app/models/item_in_cart.dart';
 
 class Cart extends StatefulWidget {
   @override
@@ -30,11 +32,8 @@ class _CartState extends State<Cart> {
               child: ListView.builder(
                 itemCount: a.length,
                 itemBuilder: (context, i) {
-                  return Card(
-                    child: Padding(
-                      padding: EdgeInsets.all(40),
-                      child: Text(a[i]),
-                    ),
+                  return CartItem(
+
                   );
                 },
               ),

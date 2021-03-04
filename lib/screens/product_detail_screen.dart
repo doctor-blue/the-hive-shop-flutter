@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/styles/colors.dart';
 import 'package:flutter_app/components/widgets/hive_button.dart';
+import 'package:flutter_app/models/item_in_cart.dart';
 import 'package:flutter_app/models/product.dart';
 
 class ProductDetail extends StatefulWidget {
@@ -106,7 +107,9 @@ class _ProductDetailState extends State<ProductDetail> {
                   "Add to card",
                   width: 172.0,
                   color: accentColor,
-                  onPressed: () {},
+                  onPressed: () {
+                    
+                  },
                   textColor: textColorPrimary,
                 ),
                 SizedBox(

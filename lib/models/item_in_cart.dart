@@ -9,3 +9,8 @@ class ItemInCart {
   ItemInCart({this.id, this.title, this.url, this.price, this.description, this.amount});
 
 }
+
+const cart = [
+
+];
+
