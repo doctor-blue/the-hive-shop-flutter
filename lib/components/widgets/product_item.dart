@@ -9,35 +9,36 @@ class ProductItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        margin: const EdgeInsets.only(top: 20, left: 10, right: 10),
-        child: GestureDetector(
-          onTap: () {
-            Navigator.pushNamed(context, PRODUCT_DETAIL,
-                arguments: {ProductDetail.productDetailKey: product});
-          },
-          child: Card(
-            child: Column(
-              children: [
-                Image.network(
-                  product.url,
-                  width: 200,
-                  height: 130,
-                  fit: BoxFit.fitWidth,
-                ),
-                SizedBox(
-                  height: 5,
-                ),
-                Text(
-                  product.title,
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
-                Text(
-                  "\$" + product.price.toString(),
-                  style: Theme.of(context).textTheme.bodyText1,
-                ),
-              ],
-            ),
+      margin: const EdgeInsets.only(top: 20, left: 10, right: 10),
+      child: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, PRODUCT_DETAIL,
+              arguments: {ProductDetail.productDetailKey: product});
+        },
+        child: Card(
+          child: Column(
+            children: [
+              Image.network(
+                product.url,
+                width: 200,
+                height: 130,
+                fit: BoxFit.fitWidth,
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Text(
+                product.title,
+                style: Theme.of(context).textTheme.bodyText1,
+              ),
+              Text(
+                "\$" + product.price.toString(),
+                style: Theme.of(context).textTheme.bodyText1,
+              ),
+            ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

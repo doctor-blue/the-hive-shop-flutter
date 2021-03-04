@@ -30,10 +30,10 @@ class _CartState extends State<Cart> {
             Expanded(
               flex: 7,
               child: ListView.builder(
-                itemCount: a.length,
+                itemCount: cart.length,
                 itemBuilder: (context, i) {
                   return CartItem(
-
+                    itemInCart: cart[i],
                   );
                 },
               ),

@@ -108,7 +108,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   width: 172.0,
                   color: accentColor,
                   onPressed: () {
-                    
+                    _addToCart();
                   },
                   textColor: textColorPrimary,
                 ),
@@ -123,10 +123,30 @@ class _ProductDetailState extends State<ProductDetail> {
                 widget.product.description,
                 style: Theme.of(context).textTheme.bodyText1,
               ),
-            )
+            ),
           ],
         ),
       ),
     );
+  }
+
+  _addToCart() {
+    var itemInCart = ItemInCart(
+      id: widget.product.id,
+      title: widget.product.title,
+      url: widget.product.url,
+      description: widget.product.description,
+      price: widget.product.price,
+      amount: productAmount,
+    );
+    if (cart.where((element) => element.id == itemInCart.id).isNotEmpty) {
+      cart.removeWhere((element) => element.id == itemInCart.id);
+      cart.add(itemInCart);
+      print('repleced');
+    } else {
+      cart.add(itemInCart);
+      print('add');
+    }
+    print(cart);
   }
 }
