@@ -20,4 +20,5 @@ const headLine1 = TextStyle(
 const body1TextStyle = TextStyle(
   fontSize: BodyTextSize,
   color: textColorPrimary,
+  fontWeight: FontWeight.normal
 );
