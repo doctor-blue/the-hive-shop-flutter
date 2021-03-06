@@ -1,10 +1,13 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/styles/colors.dart';
+import 'package:flutter_app/models/item_in_cart.dart';
 
 class CartItem extends StatefulWidget {
-  final itemInCart;
+  final ItemInCart itemInCart;
+  final onAmountChange;
 
-  CartItem({this.itemInCart});
+  CartItem({this.onAmountChange, this.itemInCart});
   @override
   _CartItemState createState() => _CartItemState();
 }
@@ -12,74 +15,90 @@ class CartItem extends StatefulWidget {
 class _CartItemState extends State<CartItem> {
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Row(
-        children: [
-          Expanded(
-            child: Image.network(
-              widget.itemInCart.url,
-              width: double.infinity,
-              height: double.infinity,
-            ),
-          ),
-          Expanded(
-            child: Column(
-              children: [
-                Text(widget.itemInCart.title),
-                Text(widget.itemInCart.price),
-                Row(
+    return Column(
+      children: [
+        SizedBox(height: 8),
+        Card(
+          child: Row(
+            children: [
+              Expanded(
+                child: Image.network(
+                  widget.itemInCart.url,
+                  width: double.infinity,
+                  height: 130,
+                  fit: BoxFit.fitWidth,
+                ),
+              ),
+              Expanded(
+                child: Column(
                   children: [
-                    GestureDetector(
-                      onTap: () {
-                        if (widget.itemInCart.amount > 1) {
-                          widget.itemInCart.amount -= 1;
-                          setState(() {});
-                        }
-                      },
-                      child: Align(
-                          alignment: Alignment.bottomRight,
-                          child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10),
-                                border: Border.all(
-                                    width: 2, color: textColorPrimary)),
-                            child: Icon(
-                              Icons.remove,
+                    Text(
+                      widget.itemInCart.title,
+                      style: Theme.of(context).textTheme.headline6,
+                    ),
+                    Text(widget.itemInCart.price.toString()),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            if (widget.itemInCart.amount > 1) {
+                              widget.itemInCart.amount -= 1;
+                              setState(() {
+                                totalPrice -= widget.itemInCart.price;
+                              });
+                              widget.onAmountChange();
+                            }
+                          },
+                          child: Align(
+                              alignment: Alignment.bottomRight,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(
+                                        width: 2, color: textColorPrimary)),
+                                child: Icon(
+                                  Icons.remove,
+                                ),
+                              )),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text("${widget.itemInCart.amount}"),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            widget.itemInCart.amount += 1;
+                            setState(() {
+                              totalPrice += widget.itemInCart.price;
+                            });
+                            widget.onAmountChange();
+                          },
+                          child: Align(
+                            alignment: Alignment.bottomRight,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  border: Border.all(
+                                      width: 2, color: textColorPrimary)),
+                              child: Icon(
+                                Icons.add,
+                              ),
                             ),
-                          )),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text("${widget.itemInCart.amount}"),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        widget.itemInCart.amount += 1;
-                        setState(() {});
-                      },
-                      child: Align(
-                        alignment: Alignment.bottomRight,
-                        child: Container(
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(
-                                  width: 2, color: textColorPrimary)),
-                          child: Icon(
-                            Icons.add,
                           ),
                         ),
-                      ),
+                      ],
                     ),
                   ],
                 ),
-              ],
-            ),
-          )
-        ],
-      ),
+              )
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

@@ -22,10 +22,7 @@ class _HiveSetting extends State<HiveSetting> {
             _backStack(context);
           },
         ),
-        title: Text(
-          'Settings',
-          style: AppBarTextStyle,
-        ),
+        title: Text('Settings'),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 24),

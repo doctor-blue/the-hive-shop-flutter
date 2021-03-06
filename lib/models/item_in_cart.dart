@@ -6,10 +6,15 @@ class ItemInCart {
   var description = "";
   var amount = 0;
 
-  ItemInCart({this.id, this.title, this.url, this.price, this.description, this.amount});
-
+  ItemInCart(
+      {this.id,
+      this.title,
+      this.url,
+      this.price,
+      this.description,
+      this.amount});
 }
-List<ItemInCart> cart = [
 
-];
+List<ItemInCart> cart = [];
 
+double totalPrice = 0.0;

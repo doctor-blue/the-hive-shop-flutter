@@ -10,12 +10,11 @@ class Cart extends StatefulWidget {
 }
 
 class _CartState extends State<Cart> {
-  var a = ['hello', 'bello', 'cello', 'dello', 'ello', 'fello', 'gello'];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: Text('Cart'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back, color: textColorPrimary),
           onPressed: () {
@@ -28,11 +27,12 @@ class _CartState extends State<Cart> {
         child: Column(
           children: [
             Expanded(
-              flex: 7,
+              flex: 10,
               child: ListView.builder(
                 itemCount: cart.length,
                 itemBuilder: (context, i) {
                   return CartItem(
+                    onAmountChange: _reload,
                     itemInCart: cart[i],
                   );
                 },
@@ -44,7 +44,7 @@ class _CartState extends State<Cart> {
                 children: [
                   Text('Amount be to paid:',
                       style: Theme.of(context).textTheme.bodyText1),
-                  Text('aaaaa'),
+                  Text('$totalPrice'),
                 ],
               ),
             ),
@@ -53,7 +53,10 @@ class _CartState extends State<Cart> {
               width: 300.0,
               color: accentColor,
               textColor: textColorPrimary,
-              onPressed: () {},
+              onPressed: () {
+                _buy();
+                setState(() {});
+              },
             ),
           ],
         ),
@@ -63,5 +66,14 @@ class _CartState extends State<Cart> {
 
   _backStack(BuildContext context) {
     Navigator.pop(context);
+  }
+
+  _buy() {
+    cart.clear();
+    totalPrice = 0.0;
+  }
+
+  _reload() {
+    setState(() {});
   }
 }

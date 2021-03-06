@@ -21,14 +21,14 @@ class SettingItem extends StatelessWidget {
             children: [
               Text(
                 itemName,
-                style: AppBarTextStyle,
+                style: Theme.of(context).textTheme.headline6,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
                     itemValue,
-                    style: body1TextStyle,
+                    style: Theme.of(context).textTheme.bodyText1,
                   ),
                   Icon(
                     Icons.arrow_forward_ios,
