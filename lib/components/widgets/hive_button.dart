@@ -12,15 +12,16 @@ class HiveButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: this.width,
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(primary: this.color),
-          onPressed: this.onPressed,
-          child: Text(
-            this.text,
-            style: TextStyle(
-                color: this.textColor == null ? primaryColor : this.textColor),
-          ),
-        ));
+      width: this.width,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(primary: this.color),
+        onPressed: this.onPressed,
+        child: Text(
+          this.text,
+          style: TextStyle(
+              color: this.textColor == null ? primaryColor : this.textColor),
+        ),
+      ),
+    );
   }
 }
