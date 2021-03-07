@@ -42,7 +42,7 @@ class Products extends StatelessWidget {
         ],
       ),
       body: FutureBuilder(
-        future: getAllProducts(),
+        future: getAllProductsFromFile(context),
         builder: (context, snapshot) {
           switch (snapshot.connectionState) {
             case ConnectionState.none:
@@ -67,7 +67,7 @@ class Products extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return ProductItem(Product.fromJson(snapshot.data[index]));
                 },
-                itemCount: snapshot.data.length,
+                itemCount: snapshot.data == null ? 0:snapshot.data.length,
               );
           }
           return null;

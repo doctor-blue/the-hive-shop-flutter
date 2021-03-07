@@ -49,6 +49,7 @@ flutter:
   assets:
     - assets/images/bee.png
     - assets/images/the_hive_shop.png
+    - assets/products.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
