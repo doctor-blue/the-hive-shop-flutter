@@ -15,7 +15,7 @@ class ProductDetail extends StatefulWidget {
 }
 
 class _ProductDetailState extends State<ProductDetail> {
-  int productAmount = 0;
+  int productAmount = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -142,11 +142,10 @@ class _ProductDetailState extends State<ProductDetail> {
     if (cart.where((element) => element.id == itemInCart.id).isNotEmpty) {
       cart.removeWhere((element) => element.id == itemInCart.id);
       cart.add(itemInCart);
-      print('repleced');
+      totalPrice += itemInCart.amount * itemInCart.price;
     } else {
       cart.add(itemInCart);
-      print('add');
+      totalPrice += itemInCart.amount * itemInCart.price;
     }
-    print(cart);
   }
 }
