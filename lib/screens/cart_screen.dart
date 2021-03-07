@@ -44,7 +44,7 @@ class _CartState extends State<Cart> {
                 children: [
                   Text('Amount be to paid:',
                       style: Theme.of(context).textTheme.bodyText1),
-                  Text('$totalPrice'),
+                  Text('\$$totalPrice'),
                 ],
               ),
             ),

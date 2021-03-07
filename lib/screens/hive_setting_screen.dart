@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/styles/colors.dart';
-import 'package:flutter_app/components/styles/styles.dart';
 import 'package:flutter_app/components/widgets/setting_item.dart';
 
 class HiveSetting extends StatefulWidget {

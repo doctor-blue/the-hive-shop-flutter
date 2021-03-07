@@ -1,4 +1,3 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/components/styles/colors.dart';
 import 'package:flutter_app/models/item_in_cart.dart';
@@ -36,7 +35,8 @@ class _CartItemState extends State<CartItem> {
                       widget.itemInCart.title,
                       style: Theme.of(context).textTheme.headline6,
                     ),
-                    Text(widget.itemInCart.price.toString()),
+                    Text("\$${widget.itemInCart.price}"),
+                    SizedBox(height: 8,),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
