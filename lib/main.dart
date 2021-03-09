@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/components/routes/Routes.dart';
-import 'package:flutter_app/components/styles/themes.dart';
 
 void main() {
   runApp(HiveApp());
@@ -12,8 +10,6 @@ class HiveApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Hive Shop',
-      theme: baseThemeData(),
-      onGenerateRoute: hiveRouteFactory(),
     );
   }
 }
